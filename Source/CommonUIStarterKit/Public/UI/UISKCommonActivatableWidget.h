@@ -28,7 +28,7 @@ struct FSKInputActionBindingHandle
 /**
  * Handles input and the action bar
  */
-UCLASS()
+UCLASS(AutoExpandCategories = ("CommonUIStarterKit|Input"), PrioritizeCategories= ("CommonUIStarterKit"))
 class COMMONUISTARTERKIT_API UUISKCommonActivatableWidget : public UCommonActivatableWidget
 {
 	GENERATED_BODY()
@@ -43,13 +43,13 @@ class COMMONUISTARTERKIT_API UUISKCommonActivatableWidget : public UCommonActiva
 	
 	//~Input
 protected:
-	UPROPERTY(EditDefaultsOnly, Category="Input")
+	UPROPERTY(EditDefaultsOnly, Category="CommonUIStarterKit|Input")
 	ESKActivatableInputMode InputConfig = ESKActivatableInputMode::Menu;
 
-	UPROPERTY(EditDefaultsOnly, Category="Input", meta=(EditCondition="InputConfig != ESKActivatableInputMode::Menu", EditConditionHides))
+	UPROPERTY(EditDefaultsOnly, Category="CommonUIStarterKit|Input", meta=(EditCondition="InputConfig != ESKActivatableInputMode::Menu", EditConditionHides))
 	EMouseCaptureMode GameMouseCaptureMode = EMouseCaptureMode::CapturePermanently;
 
-	UPROPERTY(EditAnywhere, Category="Input", meta=(EditCondition="InputConfig != ESKActivatableInputMode::Menu", EditConditionHides))
+	UPROPERTY(EditAnywhere, Category="CommonUIStarterKit|Input", meta=(EditCondition="InputConfig != ESKActivatableInputMode::Menu", EditConditionHides))
 	bool bHideCursorDuringViewportCapture = true;
 	//~Input
 
@@ -58,13 +58,13 @@ private:
 	TArray<FUIActionBindingHandle> BindedHandles;
 	
 public:
-	UFUNCTION(BlueprintCallable, Category="Rogue|Input")
+	UFUNCTION(BlueprintCallable, Category="CommonUIStarterKit|Input")
 	void RegisterBinding(UInputAction* InputAction, const FOnInputActionExecutedDelegate& Callback, FSKInputActionBindingHandle& Handle);
 
-	UFUNCTION(BlueprintCallable, Category="Rogue|Input")
+	UFUNCTION(BlueprintCallable, Category="CommonUIStarterKit|Input")
 	void UnregisterBinding(FSKInputActionBindingHandle Handle);
 
-	UFUNCTION(BlueprintCallable, Category="Rogue|Input")
+	UFUNCTION(BlueprintCallable, Category="CommonUIStarterKit|Input")
 	void UnregisterAllBindings();
 	//~Action Bindings
 };
