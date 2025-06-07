@@ -1,5 +1,7 @@
 # Common UI Starter Kit
 
+Basic CommonUI knowledge required.
+
 ## Setting Up
 
 1. **Replace LocalPlayer and GameViewportClient**
