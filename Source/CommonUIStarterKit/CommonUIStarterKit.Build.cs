@@ -25,10 +25,12 @@ public class CommonUIStarterKit : ModuleRules
 		PublicDependencyModuleNames.AddRange(
 			new string[]
 			{
-				"Core",
-				// ... add other public dependencies that you statically link with here ...
+				"Core"
 			}
 			);
+		
+		// Common UI
+		PublicDependencyModuleNames.AddRange(new string[] { "CommonUI", "CommonGame", "EngineSettings", "GameplayTags" });
 			
 		
 		PrivateDependencyModuleNames.AddRange(
