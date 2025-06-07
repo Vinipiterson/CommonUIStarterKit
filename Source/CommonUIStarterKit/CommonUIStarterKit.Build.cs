@@ -30,7 +30,7 @@ public class CommonUIStarterKit : ModuleRules
 			);
 		
 		// Common UI
-		PublicDependencyModuleNames.AddRange(new string[] { "CommonUI", "CommonGame", "EngineSettings", "GameplayTags" });
+		PublicDependencyModuleNames.AddRange(new string[] { "CommonUI", "CommonGame", "EngineSettings", "GameplayTags", "UMG" });
 			
 		
 		PrivateDependencyModuleNames.AddRange(
@@ -40,6 +40,7 @@ public class CommonUIStarterKit : ModuleRules
 				"Engine",
 				"Slate",
 				"SlateCore",
+				"EnhancedInput",
 				// ... add private dependencies that you statically link with here ...	
 			}
 			);
